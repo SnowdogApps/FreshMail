@@ -1,0 +1,11 @@
+app/code/community/Snowdog/Freshmail                            app/code/community/Snowdog/Freshmail
+app/design/adminhtml/default/default/layout/snowfreshmail.xml   app/design/adminhtml/default/default/layout/snowfreshmail.xml
+app/design/adminhtml/default/default/template/snowfreshmail     app/design/adminhtml/default/default/template/snowfreshmail
+app/design/frontend/base/default/layout/snowfreshmail.xml       app/design/frontend/base/default/layout/snowfreshmail.xml
+app/design/frontend/base/default/template/snowfreshmail         app/design/frontend/base/default/template/snowfreshmail
+app/etc/modules/Snowdog_Freshmail.xml                           app/etc/modules/Snowdog_Freshmail.xml
+app/locale/pl_PL/Snowdog_Freshmail.csv                          app/locale/pl_PL/Snowdog_Freshmail.csv
+js/snowfreshmail/popup.js                                       js/snowfreshmail/popup.js
+js/snowfreshmail/jscolor/jscolor.js                             js/snowfreshmail/jscolor/jscolor.js
+skin/adminhtml/default/default/snowfreshmail                    skin/adminhtml/default/default/snowfreshmail
+shell/freshmail.php                                             shell/freshmail.php
