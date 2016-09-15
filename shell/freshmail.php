@@ -8,7 +8,7 @@ class Snowdog_Freshmail_Shell extends Mage_Shell_Abstract
     {
         if ($this->getArg('sync')) {
             try {
-                $totalProcessed = $this->_factory->getModel('snowfreshmail/cron')->runSubscribersSyncBatch();
+                $totalProcessed = $this->_factory->getModel('snowfreshmail/cron')->runSubscribersSyncBatch(true);
                 echo sprintf('Processed subscribers: %s', $totalProcessed) . PHP_EOL;
             } catch (Exception $e) {
                 echo $e->getMessage();
@@ -19,7 +19,9 @@ class Snowdog_Freshmail_Shell extends Mage_Shell_Abstract
             try {
                 do {
                     $totalProcessed = $this->_factory->getModel('snowfreshmail/cron')->runSubscribersSyncBatch();
-                    echo sprintf('Processed subscribers: %s', $totalProcessed) . PHP_EOL;
+                    if ($totalProcessed) {
+                        echo sprintf('Processed subscribers: %s', $totalProcessed) . PHP_EOL;
+                    }
                 } while ($totalProcessed == Snowdog_Freshmail_Model_Cron::SYNC_BATCH_LIMIT);
             } catch (Exception $e) {
                 echo $e->getMessage();

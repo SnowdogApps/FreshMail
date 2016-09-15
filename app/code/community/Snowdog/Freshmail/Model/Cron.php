@@ -214,11 +214,13 @@ class Snowdog_Freshmail_Model_Cron
     /**
      * Synchronize all stores subscribers
      *
+     * @param bool $loop
+     *
      * @return int
      *
      * @throws Exception
      */
-    public function runSubscribersSyncBatch()
+    public function runSubscribersSyncBatch($loop = false)
     {
         if (!Mage::helper('snowfreshmail/api')->isConnected()) {
             return 0;
@@ -231,8 +233,12 @@ class Snowdog_Freshmail_Model_Cron
                 return 0;
             }
             // Reset flag
-            // and start check from the first subscriber
-            $this->_syncFlag->delete();
+            $this->_syncFlag->setFlagData(0);
+            $this->_syncFlag->save();
+            if (!$loop) {
+                return 0;
+            }
+            // Start check from the first subscriber
             $lastSubscriberId = 0;
             $subscribers = $this->_loadSubscriberData($lastSubscriberId);
         }
