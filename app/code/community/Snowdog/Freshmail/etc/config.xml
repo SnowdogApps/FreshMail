@@ -160,6 +160,7 @@
     <default>
         <snowfreshmail>
             <popup_settings>
+                <enabled>0</enabled>
                 <popup_time>180</popup_time>
                 <popup_count>3</popup_count>
             </popup_settings>

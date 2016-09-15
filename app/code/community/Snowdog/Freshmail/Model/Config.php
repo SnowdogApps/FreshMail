@@ -16,6 +16,7 @@ class Snowdog_Freshmail_Model_Config
     const XML_PATH_KEY                          = 'snowfreshmail/connect/api_key';
     const XML_PATH_SECRET                       = 'snowfreshmail/connect/api_secret';
     const XML_PATH_QUEUE_CLEAN_AFTER_DAY        = 'snowfreshmail/request_logs/clean_after_day';
+    const XML_PATH_POPUP_ENABLED                = 'snowfreshmail/popup_settings/enabled';
 
     /**
      * Retrieve config value for store by path
@@ -28,6 +29,28 @@ class Snowdog_Freshmail_Model_Config
     protected function _getStoreConfig($path, $store = null)
     {
         return Mage::getStoreConfig($path, $store);
+    }
+
+    /**
+     * Retrieve config flag for store by path
+     *
+     * @param string $path
+     * @param mixed $store
+     *
+     * @return bool
+     */
+    protected function _getStoreConfigFlag($path, $store = null)
+    {
+        return Mage::getStoreConfigFlag($path, $store);
+    }
+
+    /**
+     * @param mixed $store
+     * @return bool
+     */
+    public function isPopupEnabled($store = null)
+    {
+        return $this->_getStoreConfigFlag(self::XML_PATH_POPUP_ENABLED, $store);
     }
 
     /**

@@ -69,6 +69,10 @@ class Snowdog_Freshmail_Block_Popup extends Mage_Core_Block_Template
 
     protected function _toHtml()
     {
+        if (!Mage::getSingleton('snowfreshmail/config')->isPopupEnabled()) {
+            return '';
+        }
+
         $customer = Mage::helper('customer')->getCustomer();
         if ($customer) {
             $subscriber = Mage::getModel('newsletter/subscriber')
