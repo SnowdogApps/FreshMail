@@ -233,6 +233,9 @@
             <request_logs>
                 <clean_after_day>14</clean_after_day>
             </request_logs>
+            <debug>
+                <api>0</api>
+            </debug>
         </snowfreshmail>
     </default>
     <crontab>

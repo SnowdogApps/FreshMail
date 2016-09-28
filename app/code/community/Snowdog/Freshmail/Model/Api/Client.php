@@ -45,7 +45,7 @@ class Snowdog_Freshmail_Model_Api_Client
     {
         $this->_client = new Varien_Http_Client();
         $this->_logger = Mage::getModel(
-            'snowfreshmail/log_adapter',
+            'snowfreshmail/log_api_adapter',
             'snowfreshmail.log'
         );
     }
