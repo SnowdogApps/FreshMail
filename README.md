@@ -33,8 +33,6 @@ The module includes some shell scripts (**shell/** directory) to cover some sync
 
 #### Synchronize subscribers in a batch mode
 
-> **Note:** The Magento cron runs this command every hour.
-
 To synchronize a remaining batch please run this command once.
 A single batch contains max 100 subscribers. The limit is set by the FreshMail API, so it can not be increased.
 
