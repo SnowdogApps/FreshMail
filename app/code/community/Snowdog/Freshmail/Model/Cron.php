@@ -251,8 +251,12 @@ class Snowdog_Freshmail_Model_Cron
         try {
             $subscribersByEmail = array();
             foreach ($subscribers as $subscriberData) {
-                $storeId = $subscriberData['store_id'];
                 $subscriberEmail = $subscriberData['subscriber_email'];
+                $storeId = $subscriberData['store_id'];
+                if (!$storeId) {
+                    $this->_logger->log(sprintf('%s is assigned to the admin store', $subscriberEmail));
+                    continue;
+                }
                 $subscribersByEmail[$storeId][$subscriberEmail] = $subscriberData;
             }
 
