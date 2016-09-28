@@ -52,7 +52,7 @@ Troubleshooting
 -----------
 
 If you noticed some issues while using the module the best way to debug is to review logs in **FreshMail -> Request logs**
-or read plain api communication logs in **var/log/snowfreshmail.log**.
+or read plain api communication logs in **var/log/snowfreshmail.log** if api logs are enabled (disabled by default).
 The request logs are automatically removed after 14 days (by default, but you are able to change it).
 Be sure your Magento cron is working correctly too.
 
