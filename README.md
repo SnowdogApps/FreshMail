@@ -20,7 +20,7 @@ Basic setup
 Please login to your Magento admin panel and go to the module configuration tab at **FreshMail -> Configuration**.
 Next, you need to provide FreshMail API credentials and save the configuration.
 
-When the configuration page is reloaded you will be able to set a subscription list to a synchronization.
+When the configuration page is reloaded you will be able to set a subscription list for every store view.
 If your subscription lists have been updated you should refresh them by clicking at the refresh button.
 
 > **Note:** To run this module you need to have configured the Magento cron properly. Some of the API communication is done using cron jobs, so it is required.
