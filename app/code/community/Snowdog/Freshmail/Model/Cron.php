@@ -105,6 +105,11 @@ class Snowdog_Freshmail_Model_Cron
         $configModel = Mage::getSingleton('snowfreshmail/config');
 
         $listHash = $configModel->getListHash($storeId);
+        if (!$listHash) {
+            $this->_logger->log(sprintf('Subscription list is not defined for store id %s', $storeId));
+            return;
+        }
+
         $emails = array_keys($subscribers);
         $emailsByState = $apiHelper->checkSubscribersExist($listHash, $emails);
 
