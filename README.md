@@ -1,4 +1,4 @@
-Snowdog_Freshmail v2.6.14
+Snowdog_Freshmail v2.7.0
 =====================
 
 It provides an integration with the FreshMail email marketing service.
