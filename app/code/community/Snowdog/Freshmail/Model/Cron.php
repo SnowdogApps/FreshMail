@@ -105,6 +105,11 @@ class Snowdog_Freshmail_Model_Cron
         $configModel = Mage::getSingleton('snowfreshmail/config');
 
         $listHash = $configModel->getListHash($storeId);
+        if (!$listHash) {
+            $this->_logger->log(sprintf('Subscription list is not defined for store id %s', $storeId));
+            return;
+        }
+
         $emails = array_keys($subscribers);
         $emailsByState = $apiHelper->checkSubscribersExist($listHash, $emails);
 
@@ -246,8 +251,12 @@ class Snowdog_Freshmail_Model_Cron
         try {
             $subscribersByEmail = array();
             foreach ($subscribers as $subscriberData) {
-                $storeId = $subscriberData['store_id'];
                 $subscriberEmail = $subscriberData['subscriber_email'];
+                $storeId = $subscriberData['store_id'];
+                if (!$storeId) {
+                    $this->_logger->log(sprintf('%s is assigned to the admin store', $subscriberEmail));
+                    continue;
+                }
                 $subscribersByEmail[$storeId][$subscriberEmail] = $subscriberData;
             }
 

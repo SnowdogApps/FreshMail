@@ -163,3 +163,6 @@
 "Last cron heartbeat is older than one hour. Please check your settings and your configuration!","Ostatnie działanie crona zostało zarejestrowane ponad godzinę temu. Sprawdź czy cron jest poprawnie skonfigurowany."
 "Attribute <em>%s</em> is duplicated in custom fields to sync","Cecha <em>%s</em> jest zduplikowana w dodatkowych polach do synchronizacji"
 "Form max width","Maksymalna szerokość formularza"
+"Enabled","Włączone"
+"API Log","Logi API"
+"Debug","Debugowanie"

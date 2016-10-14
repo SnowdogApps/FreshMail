@@ -30,8 +30,15 @@ class Snowdog_Freshmail_Adminhtml_FreshmailController
                 $this->_redirect('*/system_config/edit', array('section' => 'snowfreshmail'));
                 return;
             }
-            $totalProcessed = (int) Mage::getSingleton('snowfreshmail/cron')
-                ->runSubscribersSyncBatch();
+
+            $totalProcessed = 0;
+            $flag = Mage::getModel('snowfreshmail/flag_sync')->loadSelf();
+            $flag->delete();
+            do {
+                $count = Mage::getSingleton('snowfreshmail/cron')->runSubscribersSyncBatch();
+                $totalProcessed += $count;
+            } while ($count == Snowdog_Freshmail_Model_Cron::SYNC_BATCH_LIMIT);
+
             $message = Mage::helper('snowfreshmail')
                 ->__('Processed %s subscribers to FreshMail.', $totalProcessed);
             if ($totalProcessed) {

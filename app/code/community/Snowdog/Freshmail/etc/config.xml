@@ -160,6 +160,7 @@
     <default>
         <snowfreshmail>
             <popup_settings>
+                <enabled>0</enabled>
                 <popup_time>180</popup_time>
                 <popup_count>3</popup_count>
             </popup_settings>
@@ -232,18 +233,13 @@
             <request_logs>
                 <clean_after_day>14</clean_after_day>
             </request_logs>
+            <debug>
+                <api>0</api>
+            </debug>
         </snowfreshmail>
     </default>
     <crontab>
         <jobs>
-            <snowfreshmail_run_subscribers_sync_batch>
-                <schedule>
-                    <cron_expr>0 * * * *</cron_expr>
-                </schedule>
-                <run>
-                    <model>snowfreshmail/cron::runSubscribersSyncBatch</model>
-                </run>
-            </snowfreshmail_run_subscribers_sync_batch>
             <snowfreshmail_process_queue>
                 <schedule>
                     <cron_expr>* * * * *</cron_expr>
