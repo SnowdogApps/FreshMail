@@ -1,3 +1,7 @@
+2.8.0
+=============
+* Added webhooks handler for unsubscribing from emails
+
 2.7.0
 =============
 * Added a feature to enable/disable popup via configuration
