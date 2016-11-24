@@ -1,4 +1,4 @@
-Snowdog_Freshmail v2.7.0
+Snowdog_Freshmail v2.8.0
 =====================
 
 It provides an integration with the FreshMail email marketing service.
@@ -18,12 +18,18 @@ Basic setup
 -----------
 
 Please login to your Magento admin panel and go to the module configuration tab at **FreshMail -> Configuration**.
-Next, you need to provide FreshMail API credentials and save the configuration.
+Next, you need to provide FreshMail API credentials, set up a secure key for the webhooks controller and save the configuration.
 
 When the configuration page is reloaded you will be able to set a subscription list for every store view.
 If your subscription lists have been updated you should refresh them by clicking at the refresh button.
 
 > **Note:** To run this module you need to have configured the Magento cron properly. Some of the API communication is done using cron jobs, so it is required.
+
+
+Webhooks
+-----------
+To support unsubscribing directly from emails you will need to configure a gateway url for webhooks at your FreshMail account settings (Settings -> Plugins and API -> Web Hooks).
+The gateway url can be found in the module configuration (System -> Configuration -> FreshMail Configuration -> Webhooks).
 
 
 Shell scripts

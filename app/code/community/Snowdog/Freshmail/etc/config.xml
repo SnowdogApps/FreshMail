@@ -235,6 +235,7 @@
             </request_logs>
             <debug>
                 <api>0</api>
+                <webhooks>0</webhooks>
             </debug>
         </snowfreshmail>
     </default>
