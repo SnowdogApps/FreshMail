@@ -18,6 +18,8 @@ class Snowdog_Freshmail_Model_Config
     const XML_PATH_QUEUE_CLEAN_AFTER_DAY        = 'snowfreshmail/request_logs/clean_after_day';
     const XML_PATH_POPUP_ENABLED                = 'snowfreshmail/popup_settings/enabled';
     const XML_PATH_DEBUG_API_LOG                = 'snowfreshmail/debug/api';
+    const XML_PATH_DEBUG_WEBHOOKS               = 'snowfreshmail/debug/webhooks';
+    const XML_PATH_WEBHOOKS_SECURE_KEY          = 'snowfreshmail/webhooks/secure_key';
 
     /**
      * Retrieve config value for store by path
@@ -197,5 +199,21 @@ class Snowdog_Freshmail_Model_Config
     public function isApiLogEnabled()
     {
         return $this->_getStoreConfigFlag(self::XML_PATH_DEBUG_API_LOG);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isWebhooksDebugEnabled()
+    {
+        return $this->_getStoreConfigFlag(self::XML_PATH_DEBUG_WEBHOOKS);
+    }
+
+    /**
+     * @return string
+     */
+    public function getWebhooksSecureKey()
+    {
+        return $this->_getStoreConfig(self::XML_PATH_WEBHOOKS_SECURE_KEY);
     }
 }
