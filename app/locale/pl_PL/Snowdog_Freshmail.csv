@@ -169,3 +169,4 @@
 "Gateway url: http://{your-domain}/freshmail/webhook/handle?secure_key={secure_key}","Adres bramki: http://{twoja-domena}/freshmail/webhook/handle?secure_key={klucz-zabezpieczający}"
 "Webhooks","Webhooki"
 "Secure Key","Klucz zabezpieczający"
+"Support at <a href=""%s"" target=""_blank"">GitHub</a>","Wsparcie na <a href=""%s"" target=""_blank"">GitHub</a>"

@@ -1,3 +1,7 @@
+2.8.1
+=============
+* Added version info in system configuration
+
 2.8.0
 =============
 * Added webhooks handler for unsubscribing from emails

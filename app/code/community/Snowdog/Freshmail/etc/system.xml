@@ -9,10 +9,17 @@
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
             <groups>
+                <info>
+                    <frontend_model>snowfreshmail/system_config_info</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </info>
                 <connect translate="label comment">
                     <label>Connection</label>
                     <comment><![CDATA[Hello! Start using this plugin by integrating FreshMail with Magento.<br/>Insert the API Key and API Secret below (<a href='https://app.freshmail.com/en/settings/integration/' target='_blank'>here you can find API information</a>)]]></comment>
-                    <sort_order>0</sort_order>
+                    <sort_order>10</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>0</show_in_website>
                     <show_in_store>0</show_in_store>
