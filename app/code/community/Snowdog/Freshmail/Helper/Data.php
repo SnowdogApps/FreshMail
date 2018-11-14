@@ -187,8 +187,11 @@ class Snowdog_Freshmail_Helper_Data extends Mage_Core_Helper_Abstract
      *
      * @return array
      */
-    public function getCustomerSegmentIds($customerId, $websiteId)
+    public function getCustomerSegmentIds($customerId, $websiteId=0)
     {
+        if ($websiteId <= 0) {
+            $websiteId = Mage::app()->getWebsite()->getId();
+        }
         $segmentIds = Mage::getResourceModel(
             'enterprise_customersegment/customer'
         )->getCustomerWebsiteSegments(
