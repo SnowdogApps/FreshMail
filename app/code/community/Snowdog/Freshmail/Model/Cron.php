@@ -171,6 +171,7 @@ class Snowdog_Freshmail_Model_Cron
         $toActivate = array();
         $segmentsEnabled = Mage::helper('core')->isModuleEnabled('Enterprise_CustomerSegment');
         foreach ($subscribers as $email => $subscriberData) {
+            $email = strtolower(trim($email));
             $data = array();
             $subscriberId = $subscriberData['subscriber_id'];
             $customerId = $subscriberData['customer_id'];
